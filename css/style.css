@@ -74,4 +74,5 @@ button {
 
 .operators #equals {
   height: calc(95% / 2);
+  background-color: lightgreen;
 }
