@@ -7,3 +7,19 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+.container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: rgb(194, 191, 191);
+  width: 30em;
+  height: 40em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
