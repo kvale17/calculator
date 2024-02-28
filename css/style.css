@@ -10,7 +10,6 @@ html {
 
 .container {
   display: flex;
-  padding: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -22,7 +21,7 @@ html {
   margin-top: 2em;
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding: 5%;
   position: relative;
 }
 
@@ -36,12 +35,12 @@ html {
 .number-buttons {
   display: flex;
   height: 50%;
-  width: 53%;
+  width: calc((85% / 5) * 3);
   flex-wrap: wrap-reverse;
   position: absolute;
   bottom: 0;
   gap: 0.5%;
-  padding-bottom: 1em;
+  padding-bottom: inherit;
 }
 
 .number {
@@ -52,26 +51,27 @@ html {
 button {
   font-size: larger;
   border-radius: 1em;
-  flex: auto;
 }
 
 .operators {
   display: flex;
   height: 50%;
-  width: 40%;
+  width: calc((85% / 5) * 2);
   flex-wrap: wrap-reverse;
   position: absolute;
   align-self: flex-end;
   bottom: 0;
   gap: 0.5%;
-  padding-bottom: 1em;
-}
-
-#equals {
-  height: calc(95% / 2);
+  padding-bottom: inherit;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .operator {
   width: calc(95% / 2);
   height: calc(95% / 4);
+}
+
+.operators #equals {
+  height: calc(95% / 2);
 }
