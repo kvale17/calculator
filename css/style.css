@@ -47,10 +47,10 @@ html {
 .number {
   width: calc(95% / 3);
   height: calc(95% / 4);
-  border-radius: 1em;
-  flex: auto;
 }
 
 button {
   font-size: larger;
+  border-radius: 1em;
+  flex: auto;
 }
