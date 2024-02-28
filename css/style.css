@@ -54,3 +54,24 @@ button {
   border-radius: 1em;
   flex: auto;
 }
+
+.operators {
+  display: flex;
+  height: 50%;
+  width: 40%;
+  flex-wrap: wrap-reverse;
+  position: absolute;
+  align-self: flex-end;
+  bottom: 0;
+  gap: 0.5%;
+  padding-bottom: 1em;
+}
+
+#equals {
+  height: calc(95% / 2);
+}
+
+.operator {
+  width: calc(95% / 2);
+  height: calc(95% / 4);
+}
