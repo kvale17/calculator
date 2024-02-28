@@ -23,6 +23,7 @@ html {
   flex-direction: column;
   padding: 2em;
   position: relative;
+  border: .5em solid black;
 }
 
 .display {
