@@ -21,7 +21,7 @@ html {
   margin-top: 2em;
   display: flex;
   flex-direction: column;
-  padding: 5%;
+  padding: 2em;
   position: relative;
 }
 
