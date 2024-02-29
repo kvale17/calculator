@@ -28,7 +28,16 @@ function operate(a, operator, b) {
 
 function updateDisplay(value) {
     const display = document.querySelector(".display");
+    if (value === "x²") value = '²';
     display.textContent += `${value} `;
 }
 
 
+const calculator = document.querySelector(".calculator");
+
+calculator.addEventListener("click", e => {
+    if (e.target.nodeName === 'BUTTON') {
+        const buttonValue = e.target.textContent;
+        updateDisplay(buttonValue);
+    }
+});
