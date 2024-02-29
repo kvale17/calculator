@@ -38,8 +38,12 @@ function updateDisplay(value) {
     display.textContent += `${value} `;
 }
 
-function clear() {
+function clearDisplay() {
     document.querySelector(".display").textContent = "";
+}
+
+function clear() {
+    clearDisplay();
 
     calc = {
         a: 0,
