@@ -1,3 +1,9 @@
+let calc = {
+    a: 0,
+    b: 0,
+    operator: 0
+};
+
 function add(a, b) {
     return a + b;
 }
