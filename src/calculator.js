@@ -44,3 +44,5 @@ calculator.addEventListener("click", e => {
         updateDisplay(buttonValue);
     }
 });
+
+document.getElementById("clear").addEventListener("click", clear);
