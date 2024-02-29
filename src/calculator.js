@@ -25,3 +25,10 @@ function operate(a, operator, b) {
         default: console.log("Invalid operator");
     }
 }
+
+function updateDisplay(value) {
+    const display = document.querySelector(".display");
+    display.textContent += `${value} `;
+}
+
+
