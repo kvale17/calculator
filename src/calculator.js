@@ -36,7 +36,7 @@ function updateDisplay(value) {
 const calculator = document.querySelector(".calculator");
 
 calculator.addEventListener("click", e => {
-    if (e.target.nodeName === 'BUTTON') {
+    if ((e.target.nodeName === 'BUTTON') && (e.target.className !== "options-button")) {
         const buttonValue = e.target.textContent;
         updateDisplay(buttonValue);
     }
