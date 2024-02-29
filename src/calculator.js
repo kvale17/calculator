@@ -32,6 +32,9 @@ function updateDisplay(value) {
     display.textContent += `${value} `;
 }
 
+function clear() {
+    document.querySelector(".display").textContent = "";
+}
 
 const calculator = document.querySelector(".calculator");
 
