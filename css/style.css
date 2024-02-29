@@ -79,3 +79,19 @@ button {
   height: calc(95% / 2);
   background-color: lightgreen;
 }
+
+.options {
+  display: flex;
+  height: 13.5432%;
+  width: 100%;
+  flex-wrap: wrap-reverse;
+  gap: 0.5%;
+  justify-content: start;
+  align-self: flex-end;
+  margin-top: 3.5em;
+}
+
+.options-button {
+  width: calc(90.06% / 5);
+  height: 87.7%;
+}
