@@ -26,7 +26,7 @@ function operate(a, operator, b) {
     switch (operator) {
         case '+': return add(a, b);
         case '-': return subtract(a, b);
-        case 'x' : return multiply(a, b);
+        case 'x': return multiply(a, b);
         case '÷': return divide(a, b);
         default: console.log("Invalid operator");
     }
@@ -40,6 +40,12 @@ function updateDisplay(value) {
 
 function clear() {
     document.querySelector(".display").textContent = "";
+
+    calc = {
+        a: 0,
+        b: 0,
+        operator: 0
+    };
 }
 
 const calculator = document.querySelector(".calculator");
