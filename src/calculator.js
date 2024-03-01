@@ -4,6 +4,8 @@ let calc = {
     operator: 0
 };
 
+let equalsWasPrevious = 0;
+
 function add(a, b) {
     return a + b;
 }
@@ -71,6 +73,13 @@ calculator.addEventListener("click", (e) => {
     if (e.target.nodeName === "BUTTON" && e.target.className !== "options-button") {
 
         const textContent = e.target.textContent;
+
+        if (equalsWasPrevious && e.target.className === "number") {
+            clear();
+        }
+
+        equalsWasPrevious = 0;
+
         updateDisplay(textContent);
 
         if (e.target.className === "number") {
@@ -99,11 +108,15 @@ calculator.addEventListener("click", (e) => {
                 calc.operator = textContent;
             }
         }
-        else if (e.target.id === "equals" && calc.b) {
-            setAnswer();
+        else if (e.target.id === "equals") {
+            if (calc.b) {
 
-            clearDisplay();
-            updateDisplay(calc.a);
+                setAnswer();
+
+                clearDisplay();
+                updateDisplay(calc.a);
+            }
+            equalsWasPrevious = 1;
         }
         else {
             console.log("Could not determine button click response");
