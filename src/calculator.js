@@ -57,6 +57,12 @@ function clear() {
     };
 }
 
+function setAnswer() {
+    calc.a = operate(parseInt(calc.a), calc.operator, parseInt(calc.b));
+    calc.b = 0;
+    calc.operator = 0;
+}
+
 const calculator = document.querySelector(".calculator");
 
 calculator.addEventListener("click", e => {
