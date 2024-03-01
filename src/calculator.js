@@ -39,8 +39,8 @@ function operate(a, operator, b) {
 
 function updateDisplay(value) {
     const display = document.querySelector(".display");
-    if (value === "x²") value = '²';
-    display.textContent += `${value} `;
+    if (value === "x²") value = "²";
+    if (value !== "=") display.textContent += `${value} `;
 }
 
 function clearDisplay() {
