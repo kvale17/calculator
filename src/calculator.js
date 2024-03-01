@@ -131,3 +131,15 @@ calculator.addEventListener("click", (e) => {
 });
 
 document.getElementById("clear").addEventListener("click", clear);
+
+document.getElementById("squared").addEventListener("click", () => {
+    if (calc.a && !calc.b && !calc.operator) {
+        calc.a = calc.a ** 2;
+        updateDisplay('²');
+    }
+    if (calc.a && calc.b && calc.operator) {
+        calc.b = calc.b ** 2;
+        updateDisplay('²');
+    }
+
+});
