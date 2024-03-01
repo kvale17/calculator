@@ -70,6 +70,42 @@ calculator.addEventListener("click", (e) => {
 
         const textContent = e.target.textContent;
         updateDisplay(textContent);
+
+        if (e.target.className === "number") {
+            if (!calc.a && !calc.operator) {
+                calc.a = textContent;
+            }
+            else if (calc.a && !calc.operator) {
+                calc.a = calc.a.toString() + textContent;
+            }
+            else if (calc.a && calc.operator && !calc.b) {
+                calc.b = textContent;
+            }
+            else if (calc.a && calc.operator && calc.b) {
+                calc.b = calc.b.toString() + textContent;
+            }
+        }
+        else if (e.target.className === "operator" && e.target.id !== "equals") {
+            if (calc.a && calc.b) {
+                setAnswer();
+            }
+
+            calc.operator = textContent;
+        }
+        else if (e.target.id === "equals" && calc.b) {
+            setAnswer();
+
+            clearDisplay();
+            updateDisplay(calc.a);
+        }
+        else {
+            console.log("Could not determine button click response");
+        }
+
+        console.log("calc.a:" + calc.a);
+        console.log("calc.operator:" + calc.operator);
+        console.log("calc.b:" + calc.b);
+        console.log("");
     }
 });
 
