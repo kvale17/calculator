@@ -113,7 +113,6 @@ calculator.addEventListener("click", (e) => {
         }
         else if (e.target.id === "equals") {
             if (calc.b) {
-
                 setAnswer();
 
                 clearDisplay();
