@@ -24,11 +24,16 @@ function operate(a, operator, b) {
     //i.e. operate(6, '-', 4)
 
     switch (operator) {
-        case '+': return add(a, b);
-        case '-': return subtract(a, b);
-        case 'x': return multiply(a, b);
-        case '÷': return divide(a, b);
-        default: console.log("Invalid operator");
+        case "+":
+            return add(a, b);
+        case "-":
+            return subtract(a, b);
+        case "x":
+            return multiply(a, b);
+        case "÷":
+            return divide(a, b);
+        default:
+            console.log("Invalid operator");
     }
 }
 
