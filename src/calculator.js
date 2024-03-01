@@ -61,7 +61,9 @@ function clear() {
 }
 
 function setAnswer() {
-    calc.a = operate(parseFloat(calc.a), calc.operator, parseFloat(calc.b));
+    if (calc.b) {
+        calc.a = operate(parseFloat(calc.a), calc.operator, parseFloat(calc.b));
+    }
     calc.b = 0;
     calc.operator = 0;
 }
@@ -111,12 +113,9 @@ calculator.addEventListener("click", (e) => {
             }
         }
         else if (e.target.id === "equals") {
-            if (calc.b) {
-                setAnswer();
-
-                clearDisplay();
-                updateDisplay(calc.a);
-            }
+            setAnswer();
+            clearDisplay();
+            updateDisplay(calc.a);
             equalsWasPrevious = 1;
         }
         else {
