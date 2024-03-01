@@ -67,8 +67,8 @@ const calculator = document.querySelector(".calculator");
 
 calculator.addEventListener("click", e => {
     if ((e.target.nodeName === 'BUTTON') && (e.target.className !== "options-button") && (e.target.id !== "equals")) {
-        const buttonValue = e.target.textContent;
-        updateDisplay(buttonValue);
+        const textContent = e.target.textContent;
+        updateDisplay(textContent);
     }
 });
 
