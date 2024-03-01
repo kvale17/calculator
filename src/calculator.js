@@ -43,8 +43,7 @@ function operate(a, operator, b) {
 function updateDisplay(value) {
     const display = document.querySelector(".display");
 
-    if (value === "x²") value = "²";
-    if (value !== "=") display.textContent += value;
+    if (value !== "=" && value !== "x²" && value != "√") display.textContent += value;
 }
 
 function clearDisplay() {
@@ -107,7 +106,7 @@ calculator.addEventListener("click", (e) => {
             else if (!calc.b && e.target.id === "minus" && calc.operator) {
                 calc.b = textContent;
             }
-            else if (calc.a && !calc.operator) {
+            else if (calc.a && !calc.operator && e.target.id !== "squared" && e.target.id !== "square-root") {
                 calc.operator = textContent;
             }
         }
