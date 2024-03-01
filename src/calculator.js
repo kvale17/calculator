@@ -92,7 +92,12 @@ calculator.addEventListener("click", (e) => {
                 setAnswer();
             }
 
-            calc.operator = textContent;
+            if (!calc.a && e.target.id === "minus") {
+                calc.a = textContent;
+            }
+            else {
+                calc.operator = textContent;
+            }
         }
         else if (e.target.id === "equals" && calc.b) {
             setAnswer();
