@@ -115,7 +115,10 @@ calculator.addEventListener("click", (e) => {
         else if (e.target.id === "equals") {
             setAnswer();
             clearDisplay();
-            updateDisplay(calc.a);
+
+            if (calc.a) {
+                updateDisplay(calc.a);
+            }
             equalsWasPrevious = 1;
         }
         else {
