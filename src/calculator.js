@@ -65,8 +65,9 @@ function setAnswer() {
 
 const calculator = document.querySelector(".calculator");
 
-calculator.addEventListener("click", e => {
-    if ((e.target.nodeName === 'BUTTON') && (e.target.className !== "options-button") && (e.target.id !== "equals")) {
+calculator.addEventListener("click", (e) => {
+    if (e.target.nodeName === "BUTTON" && e.target.className !== "options-button") {
+
         const textContent = e.target.textContent;
         updateDisplay(textContent);
     }
