@@ -23,6 +23,7 @@ function divide(a, b) {
 function operate(a, operator, b) {
     //i.e. operate(6, '-', 4)
 
+
     switch (operator) {
         case "+":
             return add(a, b);
@@ -58,7 +59,7 @@ function clear() {
 }
 
 function setAnswer() {
-    calc.a = operate(parseInt(calc.a), calc.operator, parseInt(calc.b));
+    calc.a = operate(parseFloat(calc.a), calc.operator, parseFloat(calc.b));
     calc.b = 0;
     calc.operator = 0;
 }
