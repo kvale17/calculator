@@ -107,7 +107,7 @@ calculator.addEventListener("click", (e) => {
             else if (!calc.b && e.target.id === "minus" && calc.operator) {
                 calc.b = textContent;
             }
-            else {
+            else if (calc.a && !calc.operator) {
                 calc.operator = textContent;
             }
         }
