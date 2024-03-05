@@ -5,6 +5,7 @@ let calc = {
 };
 
 let equalsWasPrevious = 0;
+let sqrtSet = 0;
 
 function add(a, b) {
     return a + b;
@@ -43,7 +44,7 @@ function operate(a, operator, b) {
 function updateDisplay(value) {
     const display = document.querySelector(".display");
 
-    if (value !== "=" && value !== "x²" && value != "√") display.textContent += value;
+    if (value !== "=" && value !== "x²") display.textContent += value;
 }
 
 function clearDisplay() {
@@ -97,32 +98,48 @@ calculator.addEventListener("click", (e) => {
                 calc.b = calc.b.toString() + textContent;
             }
         }
-        else if (e.target.className === "operator" && e.target.id !== "equals") {
-            if (calc.a && calc.b) {
-                setAnswer();
-            }
-
-            if (!calc.a && e.target.id === "minus") {
-                calc.a = textContent;
-            }
-            else if (!calc.b && e.target.id === "minus" && calc.operator) {
-                calc.b = textContent;
-            }
-            else if (calc.a && !calc.operator && e.target.id !== "squared" && e.target.id !== "square-root") {
-                calc.operator = textContent;
-            }
-        }
-        else if (e.target.id === "equals") {
-            setAnswer();
-            clearDisplay();
-
-            if (calc.a) {
-                updateDisplay(calc.a);
-            }
-            equalsWasPrevious = 1;
-        }
         else {
-            console.log("Could not determine button click response");
+            if (sqrtSet && calc.a) {
+                if (!calc.b && !calc.operator) {
+                    calc.a = Math.sqrt(calc.a);
+
+                    sqrtSet = 0;
+                }
+                else if (calc.b && calc.operator) {
+                    calc.b = Math.sqrt(calc.b);
+
+                    sqrtSet = 0;
+                }
+
+            }
+
+            if (e.target.className === "operator" && e.target.id !== "equals") {
+                if (calc.a && calc.b) {
+                    setAnswer();
+                }
+
+                if (!calc.a && e.target.id === "minus") {
+                    calc.a = textContent;
+                }
+                else if (!calc.b && e.target.id === "minus" && calc.operator) {
+                    calc.b = textContent;
+                }
+                else if (calc.a && !calc.operator && e.target.id !== "squared" && e.target.id !== "square-root") {
+                    calc.operator = textContent;
+                }
+            }
+            else if (e.target.id === "equals") {
+                setAnswer();
+                clearDisplay();
+
+                if (calc.a) {
+                    updateDisplay(calc.a);
+                }
+                equalsWasPrevious = 1;
+            }
+            else {
+                console.log("Could not determine button click response");
+            }
         }
 
         console.log("calc.a:" + calc.a);
@@ -144,4 +161,8 @@ document.getElementById("squared").addEventListener("click", () => {
         updateDisplay('²');
     }
 
+});
+
+document.getElementById("square-root").addEventListener("click", () => {
+    sqrtSet = 1;
 });
