@@ -33,6 +33,7 @@ html {
   margin-bottom: 2em;
   padding: inherit;
   font-size: larger;
+  overflow: auto;
 }
 
 .number-buttons {
