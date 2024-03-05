@@ -78,7 +78,7 @@ function setAnswer() {
 const calculator = document.querySelector(".calculator");
 
 calculator.addEventListener("click", (e) => {
-    if (e.target.nodeName === "BUTTON" && e.target.className !== "options-button") {
+    if (e.target.nodeName === "BUTTON" && e.target.id !== "clear") {
 
         let textContent = e.target.textContent;
 
