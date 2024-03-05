@@ -74,7 +74,7 @@ const calculator = document.querySelector(".calculator");
 calculator.addEventListener("click", (e) => {
     if (e.target.nodeName === "BUTTON" && e.target.className !== "options-button") {
 
-        const textContent = e.target.textContent;
+        let textContent = e.target.textContent;
 
         if (equalsWasPrevious && e.target.className === "number") {
             clear();
@@ -84,7 +84,12 @@ calculator.addEventListener("click", (e) => {
 
         updateDisplay(textContent);
 
-        if (e.target.className === "number" && e.target.id !== "%") {
+        if (e.target.id === "pie") {
+            textContent = "3.141592653589793238462643383279502884197";
+        }
+
+        if ((e.target.className === "number" || e.target.id === "pie") && e.target.id !== "%") {
+
             if (!calc.a && !calc.operator) {
                 calc.a = textContent;
             }
