@@ -23,6 +23,10 @@ function divide(a, b) {
     return a / b;
 }
 
+function mod(a, b) {
+    return a % b;
+}
+
 function operate(a, operator, b) {
     //i.e. operate(6, '-', 4)
 
@@ -36,6 +40,8 @@ function operate(a, operator, b) {
             return multiply(a, b);
         case "÷":
             return divide(a, b);
+        case "mod":
+            return mod(a, b);
         default:
             console.log("Invalid operator");
     }
