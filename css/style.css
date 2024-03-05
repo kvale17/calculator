@@ -24,6 +24,7 @@ html {
   padding: 1.5em;
   position: relative;
   border: 0.5em solid black;
+  border-radius: 2em;
 }
 
 .display {
@@ -34,6 +35,7 @@ html {
   padding: inherit;
   font-size: larger;
   overflow: auto;
+  border-radius: 1em;
 }
 
 .number-buttons {
