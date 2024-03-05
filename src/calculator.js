@@ -84,7 +84,7 @@ calculator.addEventListener("click", (e) => {
 
         updateDisplay(textContent);
 
-        if (e.target.className === "number") {
+        if (e.target.className === "number" && e.target.id !== "%") {
             if (!calc.a && !calc.operator) {
                 calc.a = textContent;
             }
@@ -150,6 +150,15 @@ calculator.addEventListener("click", (e) => {
 });
 
 document.getElementById("clear").addEventListener("click", clear);
+
+document.getElementById("%").addEventListener("click", () => {
+    if (calc.a && !calc.b && !calc.operator) {
+        calc.a = calc.a / 100;
+    }
+    else if (calc.a && calc.b && calc.operator) {
+        calc.b = calc.b / 100;
+    }
+});
 
 document.getElementById("squared").addEventListener("click", () => {
     if (calc.a && !calc.b && !calc.operator) {
