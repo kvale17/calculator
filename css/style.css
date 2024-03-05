@@ -58,7 +58,7 @@ button {
 
 .operators {
   display: flex;
-  height: 62.5%;
+  height: 61%;
   width: calc((85% / 5) * 2);
   flex-wrap: wrap-reverse;
   position: absolute;
@@ -72,11 +72,11 @@ button {
 
 .operator {
   width: calc(95% / 2);
-  height: calc(93.45% / 5);
+  height: calc(95.9% / 5);
 }
 
 .operators #equals {
-  height: calc(74.76% / 2);
+  height: calc(76.72% / 2);
   background-color: lightgreen;
 }
 
